@@ -7,6 +7,44 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <DataGrid Grid.Row="1"  Grid.ColumnSpan= "2" ItemsSource="{Binding Animals}"
+          AutoGenerateColumns="False"
+          CanUserAddRows="True"
+          CanUserDeleteRows="True"
+          IsReadOnly="False"
+          SelectionMode="Single"
+          Margin="10"
+          SelectionUnit="FullRow"
+          GridLinesVisibility="All"
+          CanUserReorderColumns="False"
+          CanUserResizeColumns="False"
+          CanUserResizeRows="False"
+          ScrollViewer.CanContentScroll="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="*" />
+                <DataGridTextColumn Header="Species" Binding="{Binding Species}" Width="*"/>
+                <DataGridTextColumn Header="Age" Binding="{Binding Age}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <ComboBox Grid.Row="0" Width="300" Margin="10" SelectedIndex="0" Height="30" HorizontalAlignment="Left">
+            <ComboBoxItem Content="Amphibisanshelter"/>
+            <ComboBoxItem Content="Fishshelter"/>
+            <ComboBoxItem Content="Mammalshelter"/>
+        </ComboBox>
+        <TextBox Grid.Column="0" Grid.Row="2" Height="48.673" VerticalAlignment="Top" Margin="10" TextBox.Text="enter name of animal" TextAlignment="Center"  VerticalContentAlignment="Center"
+         HorizontalContentAlignment="Center" Foreground="LightGray"/>
+        <TextBox Grid.Column="0" Grid.Row="2" Height="48.673" VerticalAlignment="Center" Margin="10" TextBox.Text="enter species of animal" TextAlignment="Center"  VerticalContentAlignment="Center"
+         HorizontalContentAlignment="Center" Foreground="LightGray"/>
+        <TextBox Grid.Column="0" Grid.Row="2" Height="48.673" VerticalAlignment="Bottom" Margin="10" TextBox.Text="enter age of animal" TextAlignment="Center"  VerticalContentAlignment="Center"
+         HorizontalContentAlignment="Center" Foreground="LightGray"/>
     </Grid>
 </Window>

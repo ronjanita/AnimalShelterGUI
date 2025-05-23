@@ -22,7 +22,39 @@ namespace Animalshelter.OOP.GUI
     {
         public MainWindow()
         {
+            
             InitializeComponent();
+            bool playAgain = true;
+            Mammalprogram programmammal = new Mammalprogram();
+            Mammalprogram.CreateExistingMammal();
+            Amphibiansprogram programamphibian = new Amphibiansprogram();
+            Amphibiansprogram.CreateExistingAmphibians();
+            Fishsprogram programfish = new Fishsprogram();
+            Fishsprogram.CreateExistingFishs();
+            while (playAgain)
+            {
+                Console.WriteLine("Welcome to the Animal shelter, choose between the three animalshelters to continue. \n -Mammalshelter (1) \n -Amphibianshelter(2) \n -Fishshelter(3)");
+                string userChoose = Console.ReadLine();
+                switch (userChoose)
+                {
+                    case "1":
+                        programmammal.RunGameMammal();
+                        break;
+                    case "2":
+                        programamphibian.RunGameAmphibian();
+                        break;
+                    case "3":
+                        programfish.RunGameFish();
+                        break;
+                }
+                Console.WriteLine("Do you want to end this program? y/n");
+                string input = Console.ReadLine().ToLower();
+
+                if (input == "y")
+                {
+                    playAgain = false;
+                }
+            }
         }
     }
 }

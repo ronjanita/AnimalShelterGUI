@@ -55,20 +55,39 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ShelterAmphibians.cs" />
+    <Compile Include="ShelterFishs.cs" />
+    <Compile Include="ShelterMammal.cs" />
+    <Compile Include="stingray.cs" />
+    <Compile Include="tigershark.cs" />
+    <Compile Include="toad.cs" />
+    <Compile Include="toadfish.cs" />
+    <Compile Include="whaleshark.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="Amphibiansprogram.cs" />
+    <Compile Include="anaconda.cs" />
+    <Compile Include="Animal.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="caecilian.cs" />
+    <Compile Include="cat.cs" />
+    <Compile Include="dog.cs" />
+    <Compile Include="Fishsprogram.cs" />
+    <Compile Include="frog.cs" />
+    <Compile Include="lion.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mammalprogram.cs" />
+    <Compile Include="okapi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
