@@ -20,40 +20,87 @@ namespace Animalshelter.OOP.GUI
     /// </summary>
     public partial class MainWindow : Window
     {
+        Fishsprogram programfish = new Fishsprogram();
+        Amphibiansprogram programamphibian = new Amphibiansprogram();
+        Mammalprogram programmammal = new Mammalprogram();
+        ShelterAmphibians shelterAmphibian = new ShelterAmphibians();
+        ShelterFishs shelterFishs = new ShelterFishs();
+        ShelterMammal shelterMammal = new ShelterMammal();
+        public string nameNewAnimal { get; set; }
+        public string species { get; set; }
+        public string ageNewAnimal { get; set; }
+
         public MainWindow()
         {
-            
             InitializeComponent();
-            bool playAgain = true;
-            Mammalprogram programmammal = new Mammalprogram();
             Mammalprogram.CreateExistingMammal();
-            Amphibiansprogram programamphibian = new Amphibiansprogram();
             Amphibiansprogram.CreateExistingAmphibians();
-            Fishsprogram programfish = new Fishsprogram();
             Fishsprogram.CreateExistingFishs();
-            while (playAgain)
-            {
-                Console.WriteLine("Welcome to the Animal shelter, choose between the three animalshelters to continue. \n -Mammalshelter (1) \n -Amphibianshelter(2) \n -Fishshelter(3)");
-                string userChoose = Console.ReadLine();
-                switch (userChoose)
-                {
-                    case "1":
-                        programmammal.RunGameMammal();
-                        break;
-                    case "2":
-                        programamphibian.RunGameAmphibian();
-                        break;
-                    case "3":
-                        programfish.RunGameFish();
-                        break;
-                }
-                Console.WriteLine("Do you want to end this program? y/n");
-                string input = Console.ReadLine().ToLower();
+        }
 
-                if (input == "y")
-                {
-                    playAgain = false;
-                }
+
+        public void shelters_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBox comboBox = sender as ComboBox;
+            string userChoose = ((sender as ComboBox).SelectedItem as ComboBoxItem).Content as string;
+            switch (userChoose)
+            {
+                case "Amphibianshelter":
+                    programamphibian.RunGameAmphibian();
+                    break;
+                case "Fishshelter":
+                    programfish.RunGameFish();
+                    break;
+                case "Mammalshelter":
+                    programmammal.RunGameMammal();
+                    break;
+            }
+        }
+
+        public void animalList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBox comboBox = sender as ComboBox;
+            string userChoose = ((sender as ComboBox).SelectedItem as ComboBoxItem).Content as string;
+            switch (userChoose)
+            {
+                case "Amphibianshelter":
+                    shelterAmphibian.ShowAllAnimals();
+                    break;
+                case "Fishshelter":
+                    shelterFishs.ShowAllAnimals();
+                    break;
+                case "Mammalshelter":
+                    shelterMammal.ShowAllAnimals();
+                    break;
+            }
+        }
+
+        public void adopt_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        public void add_Click(object sender, RoutedEventArgs e)
+        {
+            nameNewAnimal = enterName.Text.Trim();
+            species = enterSpecies.Text.Trim();
+            ageNewAnimal = enterAge.Text.Trim();
+            int AgeNewAnimal = int.Parse(ageNewAnimal);
+            
+            Animal newAnimal = new Animal(nameNewAnimal, AgeNewAnimal, species);
+            ComboBox comboBox = sender as ComboBox;
+            string userChoose = ((sender as ComboBox).SelectedItem as ComboBoxItem).Content as string;
+            switch (userChoose)
+            {
+                case "Amphibianshelter":
+                    shelterAmphibian.AddAnimal(newAnimal);
+                    break;
+                case "Fishshelter":
+                    shelterFishs.AddAnimal(newAnimal);
+                    break;
+                case "Mammalshelter":
+                    shelterMammal.AddAnimal(newAnimal);
+                    break;
             }
         }
     }

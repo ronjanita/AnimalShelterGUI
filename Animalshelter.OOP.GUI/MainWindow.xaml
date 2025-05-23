@@ -28,15 +28,15 @@
           CanUserReorderColumns="False"
           CanUserResizeColumns="False"
           CanUserResizeRows="False"
-          ScrollViewer.CanContentScroll="True">
+          ScrollViewer.CanContentScroll="True" SelectionChanged="animalList_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="*" />
                 <DataGridTextColumn Header="Species" Binding="{Binding Species}" Width="*"/>
                 <DataGridTextColumn Header="Age" Binding="{Binding Age}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
-        <ComboBox Name="shelters" Grid.Row="0" Width="300" Margin="10" SelectedIndex="0" Height="30" HorizontalAlignment="Left">
-            <ComboBoxItem Content="Amphibisanshelter"/>
+        <ComboBox Name="shelters" Grid.Row="0" Width="300" Margin="10" Height="30" HorizontalAlignment="Left" SelectionChanged="shelters_SelectionChanged">
+            <ComboBoxItem Content="Amphibianshelter"/>
             <ComboBoxItem Content="Fishshelter"/>
             <ComboBoxItem Content="Mammalshelter"/>
         </ComboBox>
@@ -47,7 +47,7 @@
         <TextBox Name="enterAge" Grid.Column="0" Grid.Row="2" Height="48.673" VerticalAlignment="Bottom" Margin="10" TextBox.Text="enter age of animal" TextAlignment="Center"  VerticalContentAlignment="Center"
          HorizontalContentAlignment="Center" Foreground="LightGray"/>
         <Button Name="add" Grid.Column="1" Grid.Row="2" Height="78.01" Width="185" Margin="10" VerticalAlignment="Bottom" HorizontalAlignment="Left" Content="Add" FontSize="20"/>
-        <Button Name="delete" Grid.Column="1" Grid.Row="2" Height="78.01" Width="185" Margin="10" VerticalAlignment="Bottom" HorizontalAlignment="Right" Content="Delete" FontSize="20"/>
+        <Button Name="adopt" Grid.Column="1" Grid.Row="2" Height="78.01" Width="185" Margin="10" VerticalAlignment="Bottom" HorizontalAlignment="Right" Content="Adopt" FontSize="20"/>
         <Button Name="update" Grid.Column="1" Grid.Row="2" Height="78.01" Width="185" Margin="10" VerticalAlignment="Top" HorizontalAlignment="Left" Content="Update" FontSize="20"/>
         <Button Name="greet" Grid.Column="1" Grid.Row="2" Height="78.01" Width="185" Margin="10" VerticalAlignment="Top" HorizontalAlignment="Right" Content="Greet" FontSize="20"/>
     </Grid>
