@@ -16,7 +16,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <DataGrid Grid.Row="1"  Grid.ColumnSpan= "2" ItemsSource="{Binding Animals}"
+        <DataGrid Name="animalList" Grid.Row="1"  Grid.ColumnSpan= "2" ItemsSource="{Binding Animals}"
           AutoGenerateColumns="False"
           CanUserAddRows="True"
           CanUserDeleteRows="True"
@@ -35,16 +35,20 @@
                 <DataGridTextColumn Header="Age" Binding="{Binding Age}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
-        <ComboBox Grid.Row="0" Width="300" Margin="10" SelectedIndex="0" Height="30" HorizontalAlignment="Left">
+        <ComboBox Name="shelters" Grid.Row="0" Width="300" Margin="10" SelectedIndex="0" Height="30" HorizontalAlignment="Left">
             <ComboBoxItem Content="Amphibisanshelter"/>
             <ComboBoxItem Content="Fishshelter"/>
             <ComboBoxItem Content="Mammalshelter"/>
         </ComboBox>
-        <TextBox Grid.Column="0" Grid.Row="2" Height="48.673" VerticalAlignment="Top" Margin="10" TextBox.Text="enter name of animal" TextAlignment="Center"  VerticalContentAlignment="Center"
+        <TextBox Name="enterName" Grid.Column="0" Grid.Row="2" Height="48.673" VerticalAlignment="Top" Margin="10" TextBox.Text="enter name of animal" TextAlignment="Center"  VerticalContentAlignment="Center"
          HorizontalContentAlignment="Center" Foreground="LightGray"/>
-        <TextBox Grid.Column="0" Grid.Row="2" Height="48.673" VerticalAlignment="Center" Margin="10" TextBox.Text="enter species of animal" TextAlignment="Center"  VerticalContentAlignment="Center"
+        <TextBox Name="enterSpecies" Grid.Column="0" Grid.Row="2" Height="48.673" VerticalAlignment="Center" Margin="10" TextBox.Text="enter species of animal" TextAlignment="Center"  VerticalContentAlignment="Center"
          HorizontalContentAlignment="Center" Foreground="LightGray"/>
-        <TextBox Grid.Column="0" Grid.Row="2" Height="48.673" VerticalAlignment="Bottom" Margin="10" TextBox.Text="enter age of animal" TextAlignment="Center"  VerticalContentAlignment="Center"
+        <TextBox Name="enterAge" Grid.Column="0" Grid.Row="2" Height="48.673" VerticalAlignment="Bottom" Margin="10" TextBox.Text="enter age of animal" TextAlignment="Center"  VerticalContentAlignment="Center"
          HorizontalContentAlignment="Center" Foreground="LightGray"/>
+        <Button Name="add" Grid.Column="1" Grid.Row="2" Height="78.01" Width="185" Margin="10" VerticalAlignment="Bottom" HorizontalAlignment="Left" Content="Add" FontSize="20"/>
+        <Button Name="delete" Grid.Column="1" Grid.Row="2" Height="78.01" Width="185" Margin="10" VerticalAlignment="Bottom" HorizontalAlignment="Right" Content="Delete" FontSize="20"/>
+        <Button Name="update" Grid.Column="1" Grid.Row="2" Height="78.01" Width="185" Margin="10" VerticalAlignment="Top" HorizontalAlignment="Left" Content="Update" FontSize="20"/>
+        <Button Name="greet" Grid.Column="1" Grid.Row="2" Height="78.01" Width="185" Margin="10" VerticalAlignment="Top" HorizontalAlignment="Right" Content="Greet" FontSize="20"/>
     </Grid>
 </Window>
