@@ -48,15 +48,15 @@ namespace Animalshelter.OOP.GUI
             {
                 case "Amphibianshelter":
                     amphibianShelter = currentshelter;
-                    currentshelter.ShowAllAnimals();
+                    currentshelter.ShowAllAnimals(animalList);
                     break;
                 case "Fishshelter":
                     fishShelter = currentshelter;
-                    currentshelter.ShowAllAnimals();
+                    currentshelter.ShowAllAnimals(animalList);
                     break;
                 case "Mammalshelter":
                     mammalShelter = currentshelter;
-                    currentshelter.ShowAllAnimals();
+                    currentshelter.ShowAllAnimals(animalList);
                     break;
             }
         }
