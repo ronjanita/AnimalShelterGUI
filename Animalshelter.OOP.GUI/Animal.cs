@@ -15,7 +15,7 @@ namespace Animalshelter.OOP.GUI
         }
         public virtual void MakeSound()
         {
-            Console.WriteLine("The animal makes a sound.");
+          
         }
         public override string ToString()
         {

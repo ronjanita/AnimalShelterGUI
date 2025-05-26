@@ -9,7 +9,7 @@ namespace Animalshelter.OOP.GUI
 {
     internal class Amphibiansprogram
     {
-        static public ShelterAmphibians amphibianShelter = new ShelterAmphibians();
+        static public ShelterAnimals amphibianShelter = new ShelterAnimals();
         public static void CreateExistingAmphibians()
         {
             Frog newFrog = new Frog("hans", 7, "frog");
@@ -22,55 +22,55 @@ namespace Animalshelter.OOP.GUI
             amphibianShelter.AddAnimal(newToad);
             amphibianShelter.AddAnimal(newCaecilian);
         }
-        static void EnterNewAmphibian()
-        {
-            Console.WriteLine("Please enter the species of the new animal:");
-            string species = Console.ReadLine().ToLower();
-            Console.WriteLine("Please enter the name of the animal:");
-            string nameNewAnimal = Console.ReadLine().ToLower();
-            Console.WriteLine("Please enter the age of the animal:");
-            int ageNewAnimal = int.Parse(Console.ReadLine());   //int parse macht string in int
+        //static void EnterNewAmphibian()
+        //{
+        //    Console.WriteLine("Please enter the species of the new animal:");
+        //    string species = Console.ReadLine().ToLower();
+        //    Console.WriteLine("Please enter the name of the animal:");
+        //    string nameNewAnimal = Console.ReadLine().ToLower();
+        //    Console.WriteLine("Please enter the age of the animal:");
+        //    int ageNewAnimal = int.Parse(Console.ReadLine());   //int parse macht string in int
 
-            switch (species)
-            {
-                case "frog":
-                    Frog newFrogToAdd = new Frog(nameNewAnimal, ageNewAnimal, species);
-                    amphibianShelter.AddAnimal(newFrogToAdd);
-                    break;
+        //    switch (species)
+        //    {
+        //        case "frog":
+        //            Frog newFrogToAdd = new Frog(nameNewAnimal, ageNewAnimal, species);
+        //            amphibianShelter.AddAnimal(newFrogToAdd);
+        //            break;
 
-                case "lion":
-                    Anaconda newAnacondaToAdd = new Anaconda(nameNewAnimal, ageNewAnimal, species);
-                    amphibianShelter.AddAnimal(newAnacondaToAdd);
-                    break;
+        //        case "lion":
+        //            Anaconda newAnacondaToAdd = new Anaconda(nameNewAnimal, ageNewAnimal, species);
+        //            amphibianShelter.AddAnimal(newAnacondaToAdd);
+        //            break;
 
-                case "okapi":
-                    Toad newToadToAdd = new Toad(nameNewAnimal, ageNewAnimal, species);
-                    amphibianShelter.AddAnimal(newToadToAdd);
-                    break;
+        //        case "okapi":
+        //            Toad newToadToAdd = new Toad(nameNewAnimal, ageNewAnimal, species);
+        //            amphibianShelter.AddAnimal(newToadToAdd);
+        //            break;
 
-                case "cat":
-                    Caecilian newCaecilianToAdd = new Caecilian(nameNewAnimal, ageNewAnimal, species);
-                    amphibianShelter.AddAnimal(newCaecilianToAdd);
-                    break;
+        //        case "cat":
+        //            Caecilian newCaecilianToAdd = new Caecilian(nameNewAnimal, ageNewAnimal, species);
+        //            amphibianShelter.AddAnimal(newCaecilianToAdd);
+        //            break;
 
-                default:
-                    Animal newAnimal = new Animal(nameNewAnimal, ageNewAnimal, species);
-                    amphibianShelter.AddAnimal(newAnimal);
-                    break;
-            }
-        }
+        //        default:
+        //            Animal newAnimal = new Animal(nameNewAnimal, ageNewAnimal, species);
+        //            amphibianShelter.AddAnimal(newAnimal);
+        //            break;
+        //    }
+        //}
         static void AdoptNewAmphibian()
         {
             //Console.WriteLine("Please enter the name of the animal you want to adopt:");
             string adoptedAmphibianName = Console.ReadLine().ToLower();
             amphibianShelter.AdoptAnimal(adoptedAmphibianName);
         }
-        public void GreetNewAmphibian()
-        {
-            Console.WriteLine("enter the name of the species you want to greet:");
-            string amphibianGreet = Console.ReadLine().ToLower();
-            amphibianShelter.GreetAnimal(amphibianGreet);
-        }
+        //public void GreetNewAmphibian()
+        //{
+        //    Console.WriteLine("enter the name of the species you want to greet:");
+        //    string amphibianGreet = Console.ReadLine().ToLower();
+        //    amphibianShelter.GreetAnimal(amphibianGreet);
+        //}
         //public void RunGameAmphibian(MainWindow mainWindow)
         //{
         //    CreateExistingAmphibians();
@@ -94,6 +94,5 @@ namespace Animalshelter.OOP.GUI
         //            amphibianprogram.GreetNewAmphibian();
         //            break;
         //    }
-        }
     }
 }

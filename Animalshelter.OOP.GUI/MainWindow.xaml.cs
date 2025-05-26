@@ -29,7 +29,6 @@ namespace Animalshelter.OOP.GUI
         public string nameNewAnimal { get; set; }
         public string species { get; set; }
         public string ageNewAnimal { get; set; }
-
         public ShelterAnimals currentshelter;
 
         public MainWindow()
