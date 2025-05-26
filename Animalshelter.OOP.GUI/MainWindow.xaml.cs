@@ -23,14 +23,14 @@ namespace Animalshelter.OOP.GUI
         Fishsprogram programfish = new Fishsprogram();
         Amphibiansprogram programamphibian = new Amphibiansprogram();
         Mammalprogram programmammal = new Mammalprogram();
-        ShelterAmphibians shelterAmphibian = new ShelterAmphibians();
-        ShelterFishs shelterFishs = new ShelterFishs();
-        ShelterMammal shelterMammal = new ShelterMammal();
+        ShelterAnimals mammalShelter = new ShelterAnimals();
+        ShelterAnimals amphibianShelter = new ShelterAnimals();
+        ShelterAnimals fishShelter = new ShelterAnimals();  
         public string nameNewAnimal { get; set; }
         public string species { get; set; }
         public string ageNewAnimal { get; set; }
 
-        public Shelter currentshelter;
+        public ShelterAnimals currentshelter;
 
         public MainWindow()
         {
@@ -48,34 +48,23 @@ namespace Animalshelter.OOP.GUI
             switch (userChoose)
             {
                 case "Amphibianshelter":
-                    //ShelterAmphibians();
-                    currentshelter = shelterAmphibian;
+                    amphibianShelter = currentshelter;
+                    currentshelter.ShowAllAnimals();
                     break;
                 case "Fishshelter":
-                    programfish.RunGameFish();
+                    fishShelter = currentshelter;
+                    currentshelter.ShowAllAnimals();
                     break;
                 case "Mammalshelter":
-                    programmammal.RunGameMammal();
+                    mammalShelter = currentshelter;
+                    currentshelter.ShowAllAnimals();
                     break;
             }
         }
 
         public void animalList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ComboBox comboBox = sender as ComboBox;
-            string userChoose = ((sender as ComboBox).SelectedItem as ComboBoxItem).Content as string;
-            switch (userChoose)
-            {
-                case "Amphibianshelter":
-                    shelterAmphibian.ShowAllAnimals();
-                    break;
-                case "Fishshelter":
-                    shelterFishs.ShowAllAnimals();
-                    break;
-                case "Mammalshelter":
-                    shelterMammal.ShowAllAnimals();
-                    break;
-            }
+           
         }
 
         public void adopt_Click(object sender, RoutedEventArgs e)
@@ -89,22 +78,7 @@ namespace Animalshelter.OOP.GUI
             species = enterSpecies.Text.Trim();
             ageNewAnimal = enterAge.Text.Trim();
             int AgeNewAnimal = int.Parse(ageNewAnimal);
-            
             Animal newAnimal = new Animal(nameNewAnimal, AgeNewAnimal, species);
-            ComboBox comboBox = sender as ComboBox;
-            string userChoose = ((sender as ComboBox).SelectedItem as ComboBoxItem).Content as string;
-            switch (userChoose)
-            {
-                case "Amphibianshelter":
-                    shelterAmphibian.AddAnimal(newAnimal);
-                    break;
-                case "Fishshelter":
-                    shelterFishs.AddAnimal(newAnimal);
-                    break;
-                case "Mammalshelter":
-                    shelterMammal.AddAnimal(newAnimal);
-                    break;
-            } 
             currentshelter.AddAnimal(newAnimal);
         }
     }
