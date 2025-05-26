@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Animalshelter.OOP.GUI
 {
@@ -60,7 +61,7 @@ namespace Animalshelter.OOP.GUI
         }
         static void AdoptNewAmphibian()
         {
-            Console.WriteLine("Please enter the name of the animal you want to adopt:");
+            //Console.WriteLine("Please enter the name of the animal you want to adopt:");
             string adoptedAmphibianName = Console.ReadLine().ToLower();
             amphibianShelter.AdoptAnimal(adoptedAmphibianName);
         }
@@ -70,28 +71,29 @@ namespace Animalshelter.OOP.GUI
             string amphibianGreet = Console.ReadLine().ToLower();
             amphibianShelter.GreetAnimal(amphibianGreet);
         }
-        public void RunGameAmphibian()
-        {
-            //CreateExistingAmphibians();
-            Console.WriteLine("Chose between: \n - add a new animal to the shelter(1) \n - adopt an animal from the shelter(2) \n - show all animals(3) \n - greet animal(4)");
-            string selection = Console.ReadLine().ToLower();
+        //public void RunGameAmphibian(MainWindow mainWindow)
+        //{
+        //    CreateExistingAmphibians();
+        //    Console.WriteLine("Chose between: \n - add a new animal to the shelter(1) \n - adopt an animal from the shelter(2) \n - show all animals(3) \n - greet animal(4)");
+        //    string selection = Console.ReadLine().ToLower();
 
-            switch (selection)
-            {
-                case "1":
-                    EnterNewAmphibian();
-                    break;
-                case "2":
-                    AdoptNewAmphibian();
-                    break;
-                case "3":
-                    amphibianShelter.ShowAllAnimals();
-                    break;
-                case "4":
-                    Amphibiansprogram amphibianprogram = new Amphibiansprogram();
-                    amphibianprogram.GreetNewAmphibian();
-                    break;
-            }
+        //    switch (selection)
+        //    {
+        //        case "1":
+        //            RoutedEventArgs args = new RoutedEventArgs();  //es muss etwas mitgegeben werde --> ich muss dir etwas in die hand drücken auch wenn es leer ist sonst meckerst du
+        //            mainWindow.add_Click(mainWindow, args);
+        //            break;
+        //        case "2":
+        //            AdoptNewAmphibian();
+        //            break;
+        //        case "3":
+        //            amphibianShelter.ShowAllAnimals();
+        //            break;
+        //        case "4":
+        //            Amphibiansprogram amphibianprogram = new Amphibiansprogram();
+        //            amphibianprogram.GreetNewAmphibian();
+        //            break;
+        //    }
         }
     }
 }

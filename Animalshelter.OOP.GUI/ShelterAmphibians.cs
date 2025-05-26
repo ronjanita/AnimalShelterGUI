@@ -36,7 +36,7 @@ namespace Animalshelter.OOP.GUI
         {
             foreach (Animal animal in amphibiansInShelter)
             {
-                Console.WriteLine($"here are all animals currently in the shelter: {animal}");
+                Console.WriteLine(animal);
             }
         }
 

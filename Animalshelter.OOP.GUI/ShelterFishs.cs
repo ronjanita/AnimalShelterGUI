@@ -6,27 +6,27 @@ using System.Threading.Tasks;
 
 namespace Animalshelter.OOP.GUI
 {
-    public class ShelterFishs
+    public class ShelterAnimals
     {
-        public List<Animal> fishsInShelter = new List<Animal>();
+        public List<Animal> animalsInShelter = new List<Animal>();
 
-        public void AddAnimal(Animal fishs)   //fügt ein tier zu liste hinzu
+        public void AddAnimal(Animal animals)   //fügt ein tier zu liste hinzu
         {
-            fishsInShelter.Add(fishs);
+            animalsInShelter.Add(animals);
         }
         public void AdoptAnimal(string searchingName) //entfernt ein tier anhand des namens aus der liste
         {
-            Animal foundFishs = null;
-            foreach (Animal fishsToCheck in fishsInShelter)  // rückwerts durch lsite itieren?
+            Animal foundAnimals = null;
+            foreach (Animal animalsToCheck in animalsInShelter)  // rückwerts durch lsite itieren?
             {
-                if (fishsToCheck.Name == searchingName)
+                if (animalsToCheck.Name == searchingName)
                 {
-                    foundFishs = fishsToCheck;
+                    foundAnimals = animalsToCheck;
                 }
             }
-            if (foundFishs != null)
+            if (foundAnimals != null)
             {
-                fishsInShelter.Remove(foundFishs);
+                animalsInShelter.Remove(foundAnimals);
             }
 
             //Animal searchedAnimal = animalsInShelter.FirstOrDefault(animalToCheck => animalToCheck.Name == searchingName);
@@ -34,7 +34,7 @@ namespace Animalshelter.OOP.GUI
         }
         public void ShowAllAnimals()
         {
-            foreach (Animal animal in fishsInShelter)
+            foreach (Animal animal in animalsInShelter)
             {
                 Console.WriteLine($"here are all animals currently in the shelter: {animal}");
             }
@@ -42,17 +42,17 @@ namespace Animalshelter.OOP.GUI
 
         public void GreetAnimal(string searchingSpecies)
         {
-            Animal foundFishs = null;
-            foreach (Animal animalToCheck in fishsInShelter)
+            Animal foundAnimals = null;
+            foreach (Animal animalToCheck in animalsInShelter)
             {
                 if (animalToCheck.Species == searchingSpecies)
                 {
-                    foundFishs = animalToCheck;
+                    foundAnimals = animalToCheck;
                 }
             }
-            if (foundFishs != null)
+            if (foundAnimals != null)
             {
-                foundFishs.MakeSound();
+                foundAnimals.MakeSound();
             }
         }
     }

@@ -30,6 +30,8 @@ namespace Animalshelter.OOP.GUI
         public string species { get; set; }
         public string ageNewAnimal { get; set; }
 
+        public Shelter currentshelter;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -46,7 +48,8 @@ namespace Animalshelter.OOP.GUI
             switch (userChoose)
             {
                 case "Amphibianshelter":
-                    programamphibian.RunGameAmphibian();
+                    //ShelterAmphibians();
+                    currentshelter = shelterAmphibian;
                     break;
                 case "Fishshelter":
                     programfish.RunGameFish();
@@ -101,7 +104,8 @@ namespace Animalshelter.OOP.GUI
                 case "Mammalshelter":
                     shelterMammal.AddAnimal(newAnimal);
                     break;
-            }
+            } 
+            currentshelter.AddAnimal(newAnimal);
         }
     }
 }
