@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace Animalshelter.OOP.GUI
 {
@@ -28,18 +29,19 @@ namespace Animalshelter.OOP.GUI
             {
                 animalsInShelter.Remove(foundAnimals);
             }
-
             //Animal searchedAnimal = animalsInShelter.FirstOrDefault(animalToCheck => animalToCheck.Name == searchingName);
             //animalsInShelter.Remove(searchedAnimal);
         }
-        public void ShowAllAnimals()
+
+        public void ShowAllAnimals(DataGrid datagrid)
         {
             foreach (Animal animal in animalsInShelter)
             {
-                Console.WriteLine($"here are all animals currently in the shelter: {animal}");
+                //Console.WriteLine($"here are all animals currently in the shelter: {animal}");
+                datagrid.ItemsSource = animalsInShelter;
             }
         }
-
+        
         public void GreetAnimal(string searchingSpecies)
         {
             Animal foundAnimals = null;

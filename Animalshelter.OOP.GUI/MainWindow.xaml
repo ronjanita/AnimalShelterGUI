@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Animalshelter.OOP.GUI"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Name="gridAnimal">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
