@@ -15,7 +15,7 @@ namespace Animalshelter.OOP.GUI
         {
             animalsInShelter.Add(animals);
         }
-        public void AdoptAnimal(string searchingName) //entfernt ein tier anhand des namens aus der liste
+        public void AdoptAnimal(string searchingName, DataGrid Datagrid) //entfernt ein tier anhand des namens aus der liste
         {
             Animal foundAnimals = null;
             foreach (Animal animalsToCheck in animalsInShelter)  // rückwerts durch lsite itieren?
@@ -28,6 +28,7 @@ namespace Animalshelter.OOP.GUI
             if (foundAnimals != null)
             {
                 animalsInShelter.Remove(foundAnimals);
+                Datagrid.ItemsSource = animalsInShelter;
             }
             //Animal searchedAnimal = animalsInShelter.FirstOrDefault(animalToCheck => animalToCheck.Name == searchingName);
             //animalsInShelter.Remove(searchedAnimal);
@@ -42,7 +43,7 @@ namespace Animalshelter.OOP.GUI
             }
         }
         
-        public void GreetAnimal(string searchingSpecies)
+        public string GreetAnimal(string searchingSpecies)
         {
             Animal foundAnimals = null;
             foreach (Animal animalToCheck in animalsInShelter)
@@ -54,8 +55,9 @@ namespace Animalshelter.OOP.GUI
             }
             if (foundAnimals != null)
             {
-                foundAnimals.MakeSound();
+               return foundAnimals.MakeSound();
             }
+            return null;
         }
     }
 }
