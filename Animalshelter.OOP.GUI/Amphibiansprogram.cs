@@ -59,12 +59,12 @@ namespace Animalshelter.OOP.GUI
         //            break;
         //    }
         //}
-        static void AdoptNewAmphibian()
-        {
-            //Console.WriteLine("Please enter the name of the animal you want to adopt:");
-            string adoptedAmphibianName = Console.ReadLine().ToLower();
-            amphibianShelter.AdoptAnimal(adoptedAmphibianName);
-        }
+        //static void AdoptNewAmphibian()
+        //{
+        //    //Console.WriteLine("Please enter the name of the animal you want to adopt:");
+        //    string adoptedAmphibianName = Console.ReadLine().ToLower();
+        //    amphibianShelter.AdoptAnimal(adoptedAmphibianName);
+        //}
         //public void GreetNewAmphibian()
         //{
         //    Console.WriteLine("enter the name of the species you want to greet:");

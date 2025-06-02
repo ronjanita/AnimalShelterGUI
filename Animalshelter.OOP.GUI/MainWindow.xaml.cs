@@ -67,7 +67,9 @@ namespace Animalshelter.OOP.GUI
 
         public void adopt_Click(object sender, RoutedEventArgs e)
         {
-            
+            Animal adoptAnimal = sender as Animal;
+            string adoptedAnimal = adoptAnimal.ToString();
+            currentshelter.AdoptAnimal(adoptedAnimal);
         }
 
         public void add_Click(object sender, RoutedEventArgs e)
