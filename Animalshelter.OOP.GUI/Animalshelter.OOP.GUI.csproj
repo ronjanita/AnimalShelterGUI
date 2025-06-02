@@ -55,9 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ShelterAmphibians.cs" />
-    <Compile Include="ShelterFishs.cs" />
-    <Compile Include="ShelterMammal.cs" />
+    <Compile Include="ShelterAnimals.cs" />
     <Compile Include="stingray.cs" />
     <Compile Include="tigershark.cs" />
     <Compile Include="toad.cs" />

@@ -26,7 +26,7 @@ namespace Animalshelter.OOP.GUI
         ShelterAnimals mammalShelter = new ShelterAnimals();
         ShelterAnimals amphibianShelter = new ShelterAnimals();
         ShelterAnimals fishShelter = new ShelterAnimals();  
-        public string nameNewAnimal { get; set; }
+        public string nameNewAnimal { get; set; } 
         public string species { get; set; }
         public string ageNewAnimal { get; set; }
         public ShelterAnimals currentshelter;
@@ -38,7 +38,6 @@ namespace Animalshelter.OOP.GUI
             Amphibiansprogram.CreateExistingAmphibians();
             Fishsprogram.CreateExistingFishs();
         }
-
 
         public void shelters_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
