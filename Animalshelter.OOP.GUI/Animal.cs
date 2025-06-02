@@ -15,7 +15,7 @@ namespace Animalshelter.OOP.GUI
         }
         public virtual string MakeSound()
         {
-          
+            return "";
         }
         public override string ToString()
         {

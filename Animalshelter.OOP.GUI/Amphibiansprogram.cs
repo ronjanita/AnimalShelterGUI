@@ -21,6 +21,8 @@ namespace Animalshelter.OOP.GUI
             amphibianShelter.AddAnimal(newAnaconda);
             amphibianShelter.AddAnimal(newToad);
             amphibianShelter.AddAnimal(newCaecilian);
+
+            
         }
         //static void EnterNewAmphibian()
         //{

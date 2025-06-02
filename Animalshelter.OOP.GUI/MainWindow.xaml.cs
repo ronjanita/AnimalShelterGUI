@@ -20,9 +20,6 @@ namespace Animalshelter.OOP.GUI
     /// </summary>
     public partial class MainWindow : Window
     {
-        Fishsprogram programfish = new Fishsprogram();
-        Amphibiansprogram programamphibian = new Amphibiansprogram();
-        Mammalprogram programmammal = new Mammalprogram();
         ShelterAnimals mammalShelter = new ShelterAnimals();
         ShelterAnimals amphibianShelter = new ShelterAnimals();
         ShelterAnimals fishShelter = new ShelterAnimals();  
@@ -46,15 +43,18 @@ namespace Animalshelter.OOP.GUI
             switch (userChoose)
             {
                 case "Amphibianshelter":
-                    amphibianShelter = currentshelter;
+                    comboBox.SelectedIndex = 0;
+                    currentshelter = amphibianShelter;
                     currentshelter.ShowAllAnimals(animalList);
                     break;
                 case "Fishshelter":
-                    fishShelter = currentshelter;
+                    comboBox.SelectedIndex = 1;
+                    currentshelter = fishShelter;
                     currentshelter.ShowAllAnimals(animalList);
                     break;
                 case "Mammalshelter":
-                    mammalShelter = currentshelter;
+                    comboBox.SelectedIndex=2;
+                    currentshelter = mammalShelter;
                     currentshelter.ShowAllAnimals(animalList);
                     break;
             }
@@ -85,6 +85,21 @@ namespace Animalshelter.OOP.GUI
         public void greet_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show(currentshelter.GreetAnimal(species), "Greeting animal", MessageBoxButton.OK, MessageBoxImage.Information); 
+        }
+
+        private void enterName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void enterSpecies_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void enterAge_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
