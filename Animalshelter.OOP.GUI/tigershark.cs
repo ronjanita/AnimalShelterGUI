@@ -9,9 +9,9 @@ namespace Animalshelter.OOP.GUI
     internal class Tigershark : Animal
     {
         public Tigershark(string name, int age, string species) : base(name, age, species) { }
-        public override void MakeSound()
+        public override string MakeSound()
         {
-            Console.WriteLine("pluckpluck");
+            return "pluckpluck";
         }
         public override string ToString()
         {

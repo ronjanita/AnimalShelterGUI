@@ -69,7 +69,7 @@ namespace Animalshelter.OOP.GUI
         {
             Animal adoptAnimal = sender as Animal;
             string adoptedAnimal = adoptAnimal.ToString();
-            currentshelter.AdoptAnimal(adoptedAnimal);
+            currentshelter.AdoptAnimal(adoptedAnimal); 
         }
 
         public void add_Click(object sender, RoutedEventArgs e)
@@ -80,6 +80,11 @@ namespace Animalshelter.OOP.GUI
             int AgeNewAnimal = int.Parse(ageNewAnimal);
             Animal newAnimal = new Animal(nameNewAnimal, AgeNewAnimal, species);
             currentshelter.AddAnimal(newAnimal);
+        }
+
+        public void greet_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(currentshelter.GreetAnimal(species), "Greeting animal", MessageBoxButton.OK, MessageBoxImage.Information); 
         }
     }
 }

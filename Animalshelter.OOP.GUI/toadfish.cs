@@ -9,9 +9,9 @@ namespace Animalshelter.OOP.GUI
     internal class Toadfish : Animal
     {
         public Toadfish(string name, int age, string species) : base(name, age, species) { }
-        public override void MakeSound()
+        public override string MakeSound()
         {
-            Console.WriteLine("growlgrowl");
+            return "growlgrowl";
         }
         public override string ToString()
         {

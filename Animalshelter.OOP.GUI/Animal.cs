@@ -13,7 +13,7 @@ namespace Animalshelter.OOP.GUI
             Age = age;
             Species = species;
         }
-        public virtual void MakeSound()
+        public virtual string MakeSound()
         {
           
         }

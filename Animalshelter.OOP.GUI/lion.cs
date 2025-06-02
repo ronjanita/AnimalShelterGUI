@@ -9,9 +9,9 @@ namespace Animalshelter.OOP.GUI
     internal class Lion:Animal
     {
         public Lion(string name, int age, string species) : base(name, age, species) { }
-        public override void MakeSound()
+        public override string MakeSound()
         {
-            Console.WriteLine("rawr");  
+            return "rawr";  
         }
         public override string ToString()
         {

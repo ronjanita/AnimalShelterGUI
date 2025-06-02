@@ -9,9 +9,9 @@ namespace Animalshelter.OOP.GUI
     internal class Stingray : Animal
     {
         public Stingray(string name, int age, string species) : base(name, age, species) { }
-        public override void MakeSound()
+        public override string MakeSound()
         {
-            Console.WriteLine("clickclick");
+            return "clickclick";
         }
         public override string ToString()
         {

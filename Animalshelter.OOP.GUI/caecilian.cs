@@ -10,9 +10,9 @@ namespace Animalshelter.OOP.GUI
     internal class Caecilian:Animal
     {
         public Caecilian(string name, int age, string species) : base(name, age, species) { }
-        public override void MakeSound()
+        public override string MakeSound()
         {
-            Console.WriteLine("I prefeer to stay silent.");
+            return "I prefeer to stay silent.";
         }
         public override string ToString()
         {

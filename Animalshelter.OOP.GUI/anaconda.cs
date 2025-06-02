@@ -9,9 +9,9 @@ namespace Animalshelter.OOP.GUI
     public class Anaconda : Animal
     {
         public Anaconda(string name, int age, string species) : base(name, age, species) { }
-        public override void MakeSound()
+        public override string MakeSound()
         {
-            Console.WriteLine("zrrzrr");
+            return "zrrzrr";
         }
         public override string ToString()
         {

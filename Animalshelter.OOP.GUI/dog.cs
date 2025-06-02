@@ -9,9 +9,9 @@ namespace Animalshelter.OOP.GUI
    internal class Dog : Animal
     {
         public Dog(string name, int age, string species) : base(name, age, species) { }
-        public override void MakeSound()
+        public override string MakeSound()
         {
-            Console.WriteLine("wuff");
+            return "wuff";
         }
         public override string ToString()
         {

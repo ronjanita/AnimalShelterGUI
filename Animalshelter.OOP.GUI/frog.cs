@@ -10,9 +10,9 @@ namespace Animalshelter.OOP.GUI
     internal class Frog:Animal
     {
         public Frog(string name, int age, string species) : base(name, age, species) { }
-        public override void MakeSound()
+        public override string MakeSound()
         {
-            Console.WriteLine("quackquack");
+            return "quackquack";
         }
         public override string ToString()
         {
