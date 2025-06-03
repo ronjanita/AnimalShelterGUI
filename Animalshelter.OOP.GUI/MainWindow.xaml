@@ -43,7 +43,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <DataGrid Name="animalList" Grid.Row="1"  Grid.ColumnSpan= "2" ItemsSource="{Binding Animals}"
+        <DataGrid Name="animalList" Grid.Row="1"  Grid.ColumnSpan= "2" 
           AutoGenerateColumns="False"
           CanUserAddRows="True"
           CanUserDeleteRows="True"

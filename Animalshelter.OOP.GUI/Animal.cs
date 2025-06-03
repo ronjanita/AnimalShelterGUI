@@ -4,9 +4,9 @@ namespace Animalshelter.OOP.GUI
 {
     public class Animal
     {
-        public string Name;
-        public int Age;
-        public string Species;
+        public string Name { get; set; }
+        public int Age { get; set; }
+        public string Species { get; set; }
         public Animal(string name, int age, string species)
         {
             Name = name; 
