@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,7 +10,7 @@ namespace Animalshelter.OOP.GUI
 {
     public class ShelterAnimals
     {
-        public List<Animal> animalsInShelter = new List<Animal>();
+        public ObservableCollection<Animal> animalsInShelter = new ObservableCollection<Animal>();
 
         public void AddAnimal(Animal animals)   //fügt ein tier zu liste hinzu
         {
@@ -36,11 +37,7 @@ namespace Animalshelter.OOP.GUI
 
         public void ShowAllAnimals(DataGrid datagrid)
         {
-            foreach (Animal animal in animalsInShelter)
-            {
-                //Console.WriteLine($"here are all animals currently in the shelter: {animal}");
                 datagrid.ItemsSource = animalsInShelter;
-            }
         }
         
         public string GreetAnimal(string searchingSpecies)

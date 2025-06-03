@@ -14,9 +14,6 @@ namespace Animalshelter.OOP.GUI
         {
             return "I prefeer to stay silent.";
         }
-        public override string ToString()
-        {
-            return $"{Species},{Name},{Age}years old.";
-        }
+      
     }
 }

@@ -20,9 +20,9 @@ namespace Animalshelter.OOP.GUI
     /// </summary>
     public partial class MainWindow : Window
     {
-        ShelterAnimals mammalShelter = new ShelterAnimals();
-        ShelterAnimals amphibianShelter = new ShelterAnimals();
-        ShelterAnimals fishShelter = new ShelterAnimals();  
+        ShelterAnimals mammalShelter = Mammalprogram.mammalShelter;
+        ShelterAnimals amphibianShelter = Amphibiansprogram.amphibianShelter;
+        ShelterAnimals fishShelter = Fishsprogram.fishShelter;
         public string nameNewAnimal { get; set; } 
         public string species { get; set; }
         public string ageNewAnimal { get; set; }
@@ -34,6 +34,7 @@ namespace Animalshelter.OOP.GUI
             Mammalprogram.CreateExistingMammal();
             Amphibiansprogram.CreateExistingAmphibians();
             Fishsprogram.CreateExistingFishs();
+            shelters.SelectedIndex = 0; 
         }
 
         public void shelters_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -43,19 +44,19 @@ namespace Animalshelter.OOP.GUI
             switch (userChoose)
             {
                 case "Amphibianshelter":
-                    comboBox.SelectedIndex = 0;
+                    
                     currentshelter = amphibianShelter;
                     currentshelter.ShowAllAnimals(animalList);
                     break;
                 case "Fishshelter":
-                    comboBox.SelectedIndex = 1;
+                   
                     currentshelter = fishShelter;
                     currentshelter.ShowAllAnimals(animalList);
                     break;
                 case "Mammalshelter":
-                    comboBox.SelectedIndex=2;
+                    
                     currentshelter = mammalShelter;
-                    currentshelter.ShowAllAnimals(animalList);
+                    currentshelter.ShowAllAnimals(animalList);   //egal welche shelter, default tiere werden nciht angezeigt in liste untehrlab welches in datagrid gemacht wurde
                     break;
             }
         }
@@ -68,16 +69,16 @@ namespace Animalshelter.OOP.GUI
         public void adopt_Click(object sender, RoutedEventArgs e)
         {
             Animal adoptAnimal = sender as Animal;
-            string adoptedAnimal = adoptAnimal.ToString();
+            string adoptedAnimal = adoptAnimal.ToString();  //adoptAnimal war null
             currentshelter.AdoptAnimal(adoptedAnimal, animalList); 
         }
 
         public void add_Click(object sender, RoutedEventArgs e)
         {
-            nameNewAnimal = enterName.Text.Trim();
+            nameNewAnimal = enterName.Text.Trim();   //default/starttext needs to disappear asssoons as user clicks on textbox field, othewise inout isnt correct. 
             species = enterSpecies.Text.Trim();
             ageNewAnimal = enterAge.Text.Trim();
-            int AgeNewAnimal = int.Parse(ageNewAnimal);
+            int AgeNewAnimal = int.Parse(ageNewAnimal);   //eingabe zeichen hat das falsch eformat
             Animal newAnimal = new Animal(nameNewAnimal, AgeNewAnimal, species);
             currentshelter.AddAnimal(newAnimal);
         }

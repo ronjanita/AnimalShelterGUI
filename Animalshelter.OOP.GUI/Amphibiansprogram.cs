@@ -7,7 +7,7 @@ using System.Windows;
 
 namespace Animalshelter.OOP.GUI
 {
-    internal class Amphibiansprogram
+    public class Amphibiansprogram
     {
         static public ShelterAnimals amphibianShelter = new ShelterAnimals();
         public static void CreateExistingAmphibians()

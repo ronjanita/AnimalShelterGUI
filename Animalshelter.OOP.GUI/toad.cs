@@ -14,9 +14,6 @@ namespace Animalshelter.OOP.GUI
         {
             return "waahwaah";
         }
-        public override string ToString()
-        {
-            return $"{Species},{Name},{Age}years old.";
-        }
+  
     }
 }

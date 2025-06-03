@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Animalshelter.OOP.GUI
 {
-    internal class Mammalprogram
+    public class Mammalprogram
     {
         static public ShelterAnimals mammalShelter = new ShelterAnimals();
         public static void CreateExistingMammal()
