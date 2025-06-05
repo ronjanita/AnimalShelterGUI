@@ -26,21 +26,23 @@ namespace Animalshelter.OOP.GUI
                 datagrid.ItemsSource = animalsInShelter;
         }
         
-        public string GreetAnimal(string searchingSpecies)
+        public string GreetAnimal(Animal greetAnimal)
         {
-            Animal foundAnimals = null;
-            foreach (Animal animalToCheck in animalsInShelter)
-            {
-                if (animalToCheck.Species == searchingSpecies)
-                {
-                    foundAnimals = animalToCheck;
-                }
-            }
-            if (foundAnimals != null)
-            {
-               return foundAnimals.MakeSound();
-            }
-            return null;
+           return greetAnimal.MakeSound();
+
+            //Animal foundAnimals = null;
+            //foreach (Animal animalToCheck in animalsInShelter)
+            //{
+            //    if (animalToCheck.Species == searchingSpecies)
+            //    {
+            //        foundAnimals = animalToCheck;
+            //    }
+            //}
+            //if (foundAnimals != null)
+            //{
+            //   return foundAnimals.MakeSound();
+            //}
+            //return null;
         }
     }
 }

@@ -88,7 +88,9 @@ namespace Animalshelter.OOP.GUI
 
         public void greet_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(currentshelter.GreetAnimal(species), "Greeting animal", MessageBoxButton.OK, MessageBoxImage.Information); 
+            Animal selectedAnimal = animalList.SelectedItem as Animal;
+            string sound = selectedAnimal.MakeSound();
+            MessageBox.Show($"{sound}", "Greeting animal", MessageBoxButton.OK, MessageBoxImage.Information); 
         }
 
         private void enterName_TextChanged(object sender, TextChangedEventArgs e)
