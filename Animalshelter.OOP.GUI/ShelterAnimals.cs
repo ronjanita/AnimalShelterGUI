@@ -16,23 +16,9 @@ namespace Animalshelter.OOP.GUI
         {
             animalsInShelter.Add(animals);
         }
-        public void AdoptAnimal(string searchingName, DataGrid Datagrid) //entfernt ein tier anhand des namens aus der liste
+        public void AdoptAnimal(Animal adoptAnimal) //entfernt ein tier anhand des namens aus der liste
         {
-            Animal foundAnimals = null;
-            foreach (Animal animalsToCheck in animalsInShelter)  // rückwerts durch lsite itieren?
-            {
-                if (animalsToCheck.Name == searchingName)
-                {
-                    foundAnimals = animalsToCheck;
-                }
-            }
-            if (foundAnimals != null)
-            {
-                animalsInShelter.Remove(foundAnimals);
-                Datagrid.ItemsSource = animalsInShelter;
-            }
-            //Animal searchedAnimal = animalsInShelter.FirstOrDefault(animalToCheck => animalToCheck.Name == searchingName);
-            //animalsInShelter.Remove(searchedAnimal);
+            animalsInShelter.Remove(adoptAnimal);
         }
 
         public void ShowAllAnimals(DataGrid datagrid)

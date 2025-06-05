@@ -68,12 +68,12 @@ namespace Animalshelter.OOP.GUI
 
         public void adopt_Click(object sender, RoutedEventArgs e)
         {
-            //adoptAnimal = adopt.ContentStringFormat;
+            nameNewAnimal = enterName.Text.Trim();
+            species = enterSpecies.Text.Trim();
+            ageNewAnimal = enterAge.Text.Trim();
             int AgeNewAnimal = int.Parse(ageNewAnimal);
             Animal adoptAnimal = new Animal(nameNewAnimal, AgeNewAnimal, species);
-            adoptAnimal = sender as Animal;
-            string adoptedAnimal = adoptAnimal.ToString();  //adoptAnimal war null
-            currentshelter.AdoptAnimal(adoptedAnimal, animalList); 
+            currentshelter.AdoptAnimal(adoptAnimal);
         }
 
         public void add_Click(object sender, RoutedEventArgs e)
