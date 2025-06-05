@@ -68,17 +68,20 @@ namespace Animalshelter.OOP.GUI
 
         public void adopt_Click(object sender, RoutedEventArgs e)
         {
-            Animal adoptAnimal = sender as Animal;
+            //adoptAnimal = adopt.ContentStringFormat;
+            int AgeNewAnimal = int.Parse(ageNewAnimal);
+            Animal adoptAnimal = new Animal(nameNewAnimal, AgeNewAnimal, species);
+            adoptAnimal = sender as Animal;
             string adoptedAnimal = adoptAnimal.ToString();  //adoptAnimal war null
             currentshelter.AdoptAnimal(adoptedAnimal, animalList); 
         }
 
         public void add_Click(object sender, RoutedEventArgs e)
         {
-            nameNewAnimal = enterName.Text.Trim();   //default/starttext needs to disappear asssoons as user clicks on textbox field, othewise inout isnt correct. 
+            nameNewAnimal = enterName.Text.Trim();    
             species = enterSpecies.Text.Trim();
             ageNewAnimal = enterAge.Text.Trim();
-            int AgeNewAnimal = int.Parse(ageNewAnimal);   //eingabe zeichen hat das falsch eformat
+            int AgeNewAnimal = int.Parse(ageNewAnimal);  
             Animal newAnimal = new Animal(nameNewAnimal, AgeNewAnimal, species);
             currentshelter.AddAnimal(newAnimal);
         }
