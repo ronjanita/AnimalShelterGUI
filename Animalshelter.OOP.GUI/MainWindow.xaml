@@ -6,33 +6,9 @@
         xmlns:local="clr-namespace:Animalshelter.OOP.GUI"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <!--<Window.Resources>
-        <Style x:Key="PlaceholderTextBoxStyle" TargetType="TextBox">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="TextBox">
-                        <Grid>
-                            <ScrollViewer x:Name="PART_ContentHost" Background="Transparent"/>
-                            <TextBlock Text="{TemplateBinding Tag}"
-                                       Foreground="Gray"
-                                       Margin="5,2,0,0"
-                                       IsHitTestVisible="False"
-                                       Visibility="Collapsed"
-                                       x:Name="Placeholder"/>
-                        </Grid>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="Text" Value="">
-                                <Setter TargetName="Placeholder" Property="Visibility" Value="Visible"/>
-                            </Trigger>
-                            <Trigger Property="IsFocused" Value="True">
-                                <Setter TargetName="Placeholder" Property="Visibility" Value="Collapsed"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </Window.Resources>-->
+    <Window.Background>
+        <ImageBrush ImageSource="bilder/Untitled.jpg" Stretch="UniformToFill" Opacity="0.4"/>
+    </Window.Background>
     <Grid Name="gridAnimal">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="13*"/>
@@ -66,6 +42,8 @@
           CanUserReorderColumns="False"
           CanUserResizeColumns="False"
           CanUserResizeRows="False"
+          Background="LightGreen"
+          AlternatingRowBackground="LightSeaGreen"
           ScrollViewer.CanContentScroll="True" SelectionChanged="animalList_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="*" />
@@ -73,18 +51,18 @@
                 <DataGridTextColumn Header="Age" Binding="{Binding Age}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
-        <ComboBox Name="shelters" Grid.Row="0" Width="300" Margin="10,15,0,15" Height="30" HorizontalAlignment="Left" SelectionChanged="shelters_SelectionChanged" Grid.ColumnSpan="2">
+        <ComboBox Name="shelters" Background="GreenYellow" BorderBrush="GreenYellow" Grid.Row="0" Width="300" Margin="10,15,0,15" Height="30" HorizontalAlignment="Left" SelectionChanged="shelters_SelectionChanged" Grid.ColumnSpan="2">
             <ComboBoxItem Content="Amphibianshelter"/>
             <ComboBoxItem Content="Fishshelter"/>
             <ComboBoxItem Content="Mammalshelter"/>
         </ComboBox>
-        <Label Content="enter name of the animal:" Grid.Row="2" Grid.ColumnSpan="2"/>
+        <Label Content="enter name of the animal:" Foreground="AntiqueWhite" Grid.Row="2" Grid.ColumnSpan="2"/>
         <TextBox Name="enterName" Grid.Column="0" Grid.Row="3" Height="49"  Margin="10,0,10,0" TextAlignment="Center"  VerticalContentAlignment="Center"
          HorizontalContentAlignment="Center" Foreground="black" TextChanged="AllTextBoxes" Grid.ColumnSpan="2"/>
-        <Label Content="enter species of animal:" Grid.Row="4" Grid.ColumnSpan="2"/>
+        <Label Content="enter species of animal:" Foreground="AntiqueWhite" Grid.Row="4" Grid.ColumnSpan="2"/>
         <TextBox Name="enterSpecies" Grid.Column="0" Grid.Row="5" Height="49"  Margin="10,0,10,0"  TextAlignment="Center"  VerticalContentAlignment="Center"
          HorizontalContentAlignment="Center" Foreground="black" TextChanged="AllTextBoxes" Grid.ColumnSpan="2"/>
-        <Label Content="enter age of animal:" Grid.Row="6" Grid.ColumnSpan="2"/>
+        <Label Content="enter age of animal:" Foreground="AntiqueWhite" Grid.Row="6" Grid.ColumnSpan="2"/>
         <TextBox Name="enterAge" Grid.Column="0" Grid.Row="7" Height="49" VerticalAlignment="Top" Margin="10,0,10,10"  TextAlignment="Center"  VerticalContentAlignment="Center"
          HorizontalContentAlignment="Center" Foreground="black" TextChanged="AllTextBoxes" Grid.ColumnSpan="2"/>
         <Button Name="add" Grid.Column="2" Grid.Row="3" Grid.RowSpan="3" Height="75" Width="185" Margin="10,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" Content="Add" FontSize="20" IsEnabled="False" Click="add_Click"/>
