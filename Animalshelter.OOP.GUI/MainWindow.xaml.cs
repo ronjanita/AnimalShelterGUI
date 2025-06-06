@@ -23,7 +23,7 @@ namespace Animalshelter.OOP.GUI
         ShelterAnimals mammalShelter = Mammalprogram.mammalShelter;
         ShelterAnimals amphibianShelter = Amphibiansprogram.amphibianShelter;
         ShelterAnimals fishShelter = Fishsprogram.fishShelter;
-        public string nameNewAnimal { get; set; } 
+        public string nameNewAnimal { get; set; }
         public string species { get; set; }
         public string ageNewAnimal { get; set; }
         public ShelterAnimals currentshelter;
@@ -34,7 +34,7 @@ namespace Animalshelter.OOP.GUI
             Mammalprogram.CreateExistingMammal();
             Amphibiansprogram.CreateExistingAmphibians();
             Fishsprogram.CreateExistingFishs();
-            shelters.SelectedIndex = 0; 
+            shelters.SelectedIndex = 0;
         }
 
         public void shelters_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -44,17 +44,17 @@ namespace Animalshelter.OOP.GUI
             switch (userChoose)
             {
                 case "Amphibianshelter":
-                    
+
                     currentshelter = amphibianShelter;
                     currentshelter.ShowAllAnimals(animalList);
                     break;
                 case "Fishshelter":
-                   
+
                     currentshelter = fishShelter;
                     currentshelter.ShowAllAnimals(animalList);
                     break;
                 case "Mammalshelter":
-                    
+
                     currentshelter = mammalShelter;
                     currentshelter.ShowAllAnimals(animalList);   //egal welche shelter, default tiere werden nciht angezeigt in liste untehrlab welches in datagrid gemacht wurde
                     break;
@@ -63,7 +63,8 @@ namespace Animalshelter.OOP.GUI
 
         public void animalList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-           
+            adopt.IsEnabled = animalList.SelectedItem != null;
+            greet.IsEnabled = animalList.SelectedItem != null;
         }
 
         public void adopt_Click(object sender, RoutedEventArgs e)
@@ -78,10 +79,10 @@ namespace Animalshelter.OOP.GUI
 
         public void add_Click(object sender, RoutedEventArgs e)
         {
-            nameNewAnimal = enterName.Text.Trim();    
+            nameNewAnimal = enterName.Text.Trim();
             species = enterSpecies.Text.Trim();
             ageNewAnimal = enterAge.Text.Trim();
-            int AgeNewAnimal = int.Parse(ageNewAnimal);  
+            int AgeNewAnimal = int.Parse(ageNewAnimal);
             Animal newAnimal = new Animal(nameNewAnimal, AgeNewAnimal, species);
             currentshelter.AddAnimal(newAnimal);
         }
@@ -90,22 +91,26 @@ namespace Animalshelter.OOP.GUI
         {
             Animal selectedAnimal = animalList.SelectedItem as Animal;
             string sound = selectedAnimal.MakeSound();
-            MessageBox.Show($"{sound}", "Greeting animal", MessageBoxButton.OK, MessageBoxImage.Information); 
+            MessageBox.Show($"{sound}", "Greeting animal", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
-        private void enterName_TextChanged(object sender, TextChangedEventArgs e)
+        //private void enterName_TextChanged(object sender, TextChangedEventArgs e)
+        //{
+
+        //}
+
+        //private void enterSpecies_TextChanged(object sender, TextChangedEventArgs e)
+        //{
+
+        //}
+
+        //private void enterAge_TextChanged(object sender, TextChangedEventArgs e)
+        //{
+
+        //}
+        private void AllTextBoxes(object sender, TextChangedEventArgs e)
         {
-
-        }
-
-        private void enterSpecies_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void enterAge_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
+            add.IsEnabled = !string.IsNullOrWhiteSpace(enterName.Text) && !string.IsNullOrWhiteSpace(enterSpecies.Text) && !string.IsNullOrWhiteSpace(enterAge.Text);
         }
     }
 }
