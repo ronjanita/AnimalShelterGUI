@@ -19,15 +19,10 @@
             <RowDefinition Height="60"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
-            <!-- Row 0: Label Name -->
             <RowDefinition Height="Auto"/>
-            <!-- Row 1: TextBox Name -->
             <RowDefinition Height="Auto"/>
-            <!-- Row 2: Label Species -->
             <RowDefinition Height="Auto"/>
-            <!-- Row 3: TextBox Species -->
             <RowDefinition Height="Auto"/>
-            <!-- Row 4: Label Age -->
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <DataGrid Name="animalList" Grid.Row="1"  Grid.ColumnSpan= "3" 
@@ -42,8 +37,7 @@
           CanUserReorderColumns="False"
           CanUserResizeColumns="False"
           CanUserResizeRows="False"
-          Background="LightGreen"
-          AlternatingRowBackground="LightSeaGreen"
+          AlternatingRowBackground="LightGreen"
           ScrollViewer.CanContentScroll="True" SelectionChanged="animalList_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="*" />
@@ -51,7 +45,7 @@
                 <DataGridTextColumn Header="Age" Binding="{Binding Age}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
-        <ComboBox Name="shelters" Background="GreenYellow" BorderBrush="GreenYellow" Grid.Row="0" Width="300" Margin="10,15,0,15" Height="30" HorizontalAlignment="Left" SelectionChanged="shelters_SelectionChanged" Grid.ColumnSpan="2">
+        <ComboBox Name="shelters"  Grid.Row="0" Width="300" Margin="10,15,0,15" Height="30" HorizontalAlignment="Left" SelectionChanged="shelters_SelectionChanged" Grid.ColumnSpan="2">
             <ComboBoxItem Content="Amphibianshelter"/>
             <ComboBoxItem Content="Fishshelter"/>
             <ComboBoxItem Content="Mammalshelter"/>
@@ -65,8 +59,9 @@
         <Label Content="enter age of animal:" Foreground="AntiqueWhite" Grid.Row="6" Grid.ColumnSpan="2"/>
         <TextBox Name="enterAge" Grid.Column="0" Grid.Row="7" Height="49" VerticalAlignment="Top" Margin="10,0,10,10"  TextAlignment="Center"  VerticalContentAlignment="Center"
          HorizontalContentAlignment="Center" Foreground="black" TextChanged="AllTextBoxes" Grid.ColumnSpan="2"/>
-        <Button Name="add" Grid.Column="2" Grid.Row="3" Grid.RowSpan="3" Height="75" Width="185" Margin="10,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" Content="Add" FontSize="20" IsEnabled="False" Click="add_Click"/>
-        <Button Name="adopt" Grid.Column="2" Grid.Row="5" Grid.RowSpan="3" Height="75" Width="185" Margin="0,0,10,10" VerticalAlignment="Bottom" HorizontalAlignment="Right" Content="Adopt" FontSize="20" IsEnabled="False" Click="adopt_Click"/>
-        <Button Name="greet" Grid.Column="2" Grid.Row="1" Grid.RowSpan="3" Height="75" Width="185" Margin="0,139,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Content="Greet" FontSize="20" IsEnabled="False" Click="greet_Click"/>
+        <Button Name="add" Grid.Column="2" Grid.Row="3" Grid.RowSpan="3" Height="75" Width="185" Margin="10,0,0,0" VerticalAlignment="Bottom" Background="GreenYellow"  HorizontalAlignment="Left" Content="Add" FontSize="20" IsEnabled="False" Click="add_Click"/>
+        <Button Name="adopt" Grid.Column="2" Grid.Row="5" Grid.RowSpan="3" Height="75" Width="185" Margin="0,0,10,10" VerticalAlignment="Bottom" Background="GreenYellow" HorizontalAlignment="Right" Content="Adopt" FontSize="20" IsEnabled="False" Click="adopt_Click"/>
+        <Button Name="greet" Grid.Column="2" Grid.Row="1" Grid.RowSpan="3" Height="75" Width="185" Margin="0,139,10,0" VerticalAlignment="Bottom" Background="GreenYellow" HorizontalAlignment="Right" Content="Greet" FontSize="20" IsEnabled="False"  Click="greet_Click"/>
+        <Image Source="/bilder/AnimalShelter.png" Grid.Column="2" HorizontalAlignment="Right"/>
     </Grid>
 </Window>
