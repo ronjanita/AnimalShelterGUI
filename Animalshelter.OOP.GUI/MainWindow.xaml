@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Animalshelter.OOP.GUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="550" Width="800">
     <Window.Background>
         <ImageBrush ImageSource="bilder/Untitled.jpg" Stretch="UniformToFill" Opacity="0.4"/>
     </Window.Background>
@@ -59,9 +59,9 @@
         <Label Content="enter age of animal:" Foreground="AntiqueWhite" Grid.Row="6" Grid.ColumnSpan="2"/>
         <TextBox Name="enterAge" Grid.Column="0" Grid.Row="7" Height="49" VerticalAlignment="Top" Margin="10,0,10,10"  TextAlignment="Center"  VerticalContentAlignment="Center"
          HorizontalContentAlignment="Center" Foreground="black" TextChanged="AllTextBoxes" Grid.ColumnSpan="2"/>
+        <Button Name="greet" Grid.Column="2" Grid.Row="2" Grid.RowSpan="3" Height="75" Width="185" Margin="0,0,10,0" VerticalAlignment="Top" Background="GreenYellow" HorizontalAlignment="Right" Content="Greet" FontSize="20" IsEnabled="False"  Click="greet_Click"/>
         <Button Name="add" Grid.Column="2" Grid.Row="3" Grid.RowSpan="3" Height="75" Width="185" Margin="10,0,0,0" VerticalAlignment="Bottom" Background="GreenYellow"  HorizontalAlignment="Left" Content="Add" FontSize="20" IsEnabled="False" Click="add_Click"/>
         <Button Name="adopt" Grid.Column="2" Grid.Row="5" Grid.RowSpan="3" Height="75" Width="185" Margin="0,0,10,10" VerticalAlignment="Bottom" Background="GreenYellow" HorizontalAlignment="Right" Content="Adopt" FontSize="20" IsEnabled="False" Click="adopt_Click"/>
-        <Button Name="greet" Grid.Column="2" Grid.Row="1" Grid.RowSpan="3" Height="75" Width="185" Margin="0,139,10,0" VerticalAlignment="Bottom" Background="GreenYellow" HorizontalAlignment="Right" Content="Greet" FontSize="20" IsEnabled="False"  Click="greet_Click"/>
-        <Image Source="/bilder/AnimalShelter.png" Grid.Column="2" HorizontalAlignment="Right"/>
+        <Image Source="bilder/AnimalShelter.png" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right"/>
     </Grid>
 </Window>
